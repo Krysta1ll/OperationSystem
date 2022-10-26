@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OS.views.mainController">
+   <children>
+      <Label id="Title" fx:id="Title" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="140.0" text="CPU调度" />
+      <AnchorPane layoutX="12.0" layoutY="77.0" prefHeight="195.0" prefWidth="359.0" style="-fx-border-width: 1; -fx-border-color: black;">
+         <children>
+            <TextField fx:id="scheduling_1" layoutX="10.0" layoutY="35.0" prefHeight="22.0" prefWidth="89.0" />
+            <TextField fx:id="scheduling_4" layoutX="10.0" layoutY="149.0" prefHeight="22.0" prefWidth="89.0" />
+            <TextField fx:id="scheduling_3" layoutX="9.0" layoutY="113.0" prefHeight="22.0" prefWidth="89.0" />
+            <TextField fx:id="scheduling_2" layoutX="10.0" layoutY="75.0" prefHeight="22.0" prefWidth="89.0" />
+            <Label id="Title" fx:id="Title1" layoutX="18.0" layoutY="-1.0" prefHeight="35.0" prefWidth="89.0" text="进程名" />
+            <Label id="Title" fx:id="Title11" layoutX="109.0" layoutY="-1.0" prefHeight="35.0" prefWidth="89.0" text="运行时间" />
+            <TextField fx:id="runningTime_1" layoutX="111.0" layoutY="35.0" prefHeight="26.0" prefWidth="50.0" />
+            <TextField fx:id="runningTime_2" layoutX="112.0" layoutY="75.0" prefHeight="26.0" prefWidth="50.0" />
+            <TextField fx:id="runningTime_3" layoutX="112.0" layoutY="112.0" prefHeight="26.0" prefWidth="50.0" />
+            <TextField fx:id="runningTime_4" layoutX="111.0" layoutY="150.0" prefHeight="26.0" prefWidth="50.0" />
+            <Label id="Title" fx:id="Title111" layoutX="177.0" prefHeight="35.0" prefWidth="89.0" text="优先权" />
+            <Button fx:id="confirmBtn" layoutX="282.0" layoutY="113.0" mnemonicParsing="false" onAction="#confirmBtnAction" text="确定" />
+            <Button fx:id="clearBtn" layoutX="282.0" layoutY="150.0" mnemonicParsing="false" onAction="#clearBtnAction" text="清空" />
+            <ChoiceBox fx:id="priority_1" layoutX="172.0" layoutY="34.0" prefHeight="26.0" prefWidth="56.0" />
+            <ChoiceBox fx:id="priority_3" layoutX="173.0" layoutY="114.0" prefHeight="26.0" prefWidth="56.0" />
+            <ChoiceBox fx:id="priority_2" layoutX="172.0" layoutY="76.0" prefHeight="26.0" prefWidth="56.0" />
+            <ChoiceBox fx:id="priority_4" layoutX="172.0" layoutY="150.0" prefHeight="26.0" prefWidth="56.0" />
+            <Label layoutX="13.0" layoutY="-16.0" text="添加进程" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane layoutX="409.0" layoutY="74.0" prefHeight="200.0" prefWidth="363.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="37.0" layoutY="19.0" text="进程名" />
+            <Label layoutX="131.0" layoutY="19.0" text="运行时间" />
+            <Label layoutX="237.0" layoutY="18.0" text="优先级" />
+            <ListView fx:id="scheList" layoutX="20.0" layoutY="38.0" prefHeight="148.0" prefWidth="72.0" />
+            <ListView fx:id="runningTimeList" layoutX="126.0" layoutY="39.0" prefHeight="148.0" prefWidth="72.0" />
+            <ListView fx:id="priorityList" layoutX="225.0" layoutY="39.0" prefHeight="148.0" prefWidth="72.0" />
+            <Button fx:id="activeBtn" layoutX="313.0" layoutY="154.0" mnemonicParsing="false" onAction="#runningBtnAction" text="运行" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="418.0" layoutY="54.0" text="后备队列" />
+      <AnchorPane layoutX="14.0" layoutY="314.0" prefHeight="233.0" prefWidth="447.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="32.0" layoutY="34.0" text="进程名" />
+            <Label layoutX="298.0" layoutY="36.0" text="PCB指针" />
+            <Label layoutX="213.0" layoutY="36.0" text="优先级" />
+            <Label layoutX="115.0" layoutY="35.0" text="运行时间" />
+            <ListView fx:id="scheList_ready" layoutX="17.0" layoutY="59.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="pcb_ready" layoutX="292.0" layoutY="59.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="runningTimeList_ready" layoutX="107.0" layoutY="60.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="prioprityList_ready" layoutX="200.0" layoutY="59.0" prefHeight="159.0" prefWidth="69.0" />
+            <Button fx:id="hangUpBtn" layoutX="377.0" layoutY="146.0" mnemonicParsing="false" onAction="#pauseBtnAction" text="挂起" />
+            <Button fx:id="nextBtn" layoutX="377.0" layoutY="179.0" mnemonicParsing="false" onAction="#nextBtnAction" text="Next" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="34.0" layoutY="292.0" text="就绪队列" />
+      <AnchorPane layoutX="487.0" layoutY="314.0" prefHeight="167.0" prefWidth="293.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="40.0" layoutY="29.0" text="CPU" />
+            <Label layoutX="234.0" layoutY="30.0" text="优先级" />
+            <Label layoutX="135.0" layoutY="30.0" text="时间" />
+            <Label fx:id="cpuLabel" layoutX="24.0" layoutY="59.0" prefHeight="56.0" prefWidth="74.0" style="-fx-border-color: black;" />
+            <Label fx:id="priorityLable" layoutX="214.0" layoutY="58.0" prefHeight="56.0" prefWidth="74.0" style="-fx-border-color: black;" />
+            <Label fx:id="timeLable" layoutX="120.0" layoutY="59.0" prefHeight="56.0" prefWidth="74.0" style="-fx-border-color: black;" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="504.0" layoutY="291.0" text="CPU" />
+      <Label layoutX="161.0" layoutY="22.0" text="CPU道数" />
+      <ChoiceBox fx:id="CPU" layoutX="230.0" layoutY="20.0" prefHeight="26.0" prefWidth="77.0" />
+      <AnchorPane layoutX="12.0" layoutY="581.0" prefHeight="217.0" prefWidth="392.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="40.0" layoutY="29.0" text="CPU" />
+            <Label layoutX="234.0" layoutY="30.0" text="优先级" />
+            <Label layoutX="135.0" layoutY="30.0" text="时间" />
+            <Label layoutX="21.0" layoutY="-25.0" text="挂起进程" />
+            <ListView fx:id="cpuList_hanging" layoutX="20.0" layoutY="48.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="timeList_hanging" layoutX="118.0" layoutY="49.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="prioprity_hanging" layoutX="219.0" layoutY="50.0" prefHeight="159.0" prefWidth="69.0" />
+            <Button layoutX="304.0" layoutY="153.0" mnemonicParsing="false" onAction="#dePauseBtnAction" text="解挂" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="448.0" layoutY="578.0" prefHeight="217.0" prefWidth="230.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="40.0" layoutY="29.0" text="进程名" />
+            <Label layoutX="137.0" layoutY="29.0" text="PCB指针" />
+            <Label layoutX="21.0" layoutY="-25.0" text="终止进程" />
+            <ListView fx:id="scheList_end" layoutX="20.0" layoutY="48.0" prefHeight="159.0" prefWidth="69.0" />
+            <ListView fx:id="PCB_end" layoutX="124.0" layoutY="46.0" prefHeight="159.0" prefWidth="69.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
